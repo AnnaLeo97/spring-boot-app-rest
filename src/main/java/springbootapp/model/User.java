@@ -1,5 +1,6 @@
 package springbootapp.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -33,6 +34,7 @@ public class User implements UserDetails {
     @Column(name = "passwordConfirm")
     private String passwordConfirm;
 
+    @JsonManagedReference
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "USER_ID"),
             inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))

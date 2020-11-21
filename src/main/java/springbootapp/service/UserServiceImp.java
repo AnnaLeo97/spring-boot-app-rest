@@ -1,8 +1,8 @@
 package springbootapp.service;
 
-import springbootapp.dao.UserDao;
 import springbootapp.model.Role;
 import springbootapp.model.User;
+import springbootapp.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,18 +20,13 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public void editUser(User user, String role) {
-        userDao.editUser(user, role);
-    }
-
-    @Override
     public void deleteUser(Long id) {
         userDao.deleteUser(id);
     }
 
     @Override
-    public void updateUser(Long id, String firstName, String lastName, Byte age, String email, String password, String role) {
-        userDao.updateUser(id, firstName, lastName, age, email, password, role);
+    public void editUser(Long id, String firstName, String lastName, Byte age, String email, String password, String role) {
+        userDao.editUser(id, firstName, lastName, age, email, password, role);
     }
 
     @Override

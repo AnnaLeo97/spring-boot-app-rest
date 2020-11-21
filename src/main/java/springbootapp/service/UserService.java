@@ -8,9 +8,7 @@ import java.util.List;
 public interface UserService {
     void createUser(String firstName, String lastName, Byte age, String email, String password, String role);
 
-    void editUser(User user, String role);
-
-    void updateUser(Long id, String firstName, String lastName, Byte age, String email, String password, String role);
+    void editUser(Long id, String firstName, String lastName, Byte age, String email, String password, String role);
 
     void deleteUser(Long id);
 
